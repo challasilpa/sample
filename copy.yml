@@ -1,0 +1,11 @@
+---
+- name: Copy file from node 1 to node 2
+  hosts:  node1
+  become: yes   
+  tasks:
+    - name: Copy file
+      copy:
+        src: /root/test.txt  
+        dest: /root4  
+      delegate_to: 172.31.13.216  
+

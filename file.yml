@@ -1,0 +1,15 @@
+---
+- name: Create Files Playbook
+  hosts: all  
+  become: yes     
+  tasks:
+    - name: Create files
+      file:
+        path: "{{ item }}"
+        state: touch
+      with_items:
+        - /root/3.txt
+        - /root/2.txt
+        - /root/1.txt
+        # Add more file paths as needed
+
